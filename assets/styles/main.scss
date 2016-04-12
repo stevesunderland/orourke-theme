@@ -226,15 +226,15 @@ address {
 nav {
 	position: fixed;
 	z-index: 999;
-	top: 2em;
+	top: 0;
 	width: 100%;
-	padding-left: 2em;
-	padding-right: 2em;
+	// padding-left: 0;
+	// padding-right: 2em;
 
 	@extend .sans;
 
 	.row {
-		background-color: #fff;
+		background-color: #000;
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -248,24 +248,24 @@ nav {
 		line-height: 1;
 		position: relative;
 	}
-	.menu {
-		float: left;
-		text-transform: uppercase;
-		font-weight: 600;
-		margin-left: 1em;
+	// .menu {
+	// 	float: left;
+	// 	text-transform: uppercase;
+	// 	font-weight: 600;
+	// 	margin-left: 1em;
 
-		li {
-			a {
-				padding: 1.3em 1em 1em;
-				color: #000;
-				letter-spacing: .1em;
+	// 	li {
+	// 		a {
+	// 			padding: 1.3em 1em 1em;
+	// 			color: #000;
+	// 			letter-spacing: .1em;
 
-				&:hover {
-					color: $primary;
-				}
-			}
-		}
-	}
+	// 			&:hover {
+	// 				color: $primary;
+	// 			}
+	// 		}
+	// 	}
+	// }
 	.menu-logo {
 		float: right;
 	}
@@ -503,7 +503,7 @@ footer {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	padding: 2em;
+	padding: 0;
 	color: #fff;
 
 	&.active {

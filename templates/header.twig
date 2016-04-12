@@ -3,15 +3,15 @@
         <a href="#" class="menu-toggle">
             <i class="icon-menu"></i>
         </a>
-        <ul class="menu hide-for-small-only">
+{#         <ul class="menu hide-for-small-only">
             {% for item in menu.get_items %}
                 <li class="nav-main-item {{item.classes | join(' ')}}">
                     <a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
                 </li>
             {% endfor %}
-        </ul>
+        </ul> #}
         <a href="/" class="menu-logo">
-            <img src="{{ site.url }}/wp-content/themes/orourke-twig/assets/images/orourke-logo-black.svg" alt="" style="height: 30px; width: 200px; margin: 0.7em 0;">
+            <img src="{{ site.url }}/wp-content/themes/orourke-twig/assets/images/orourke-logo-white.svg" alt="" style="height: 30px; width: 200px; margin: 0.7em 0;">
         </a>
     </div>
 </nav>
