@@ -1,7 +1,7 @@
 // ## Globals
 var argv         = require('minimist')(process.argv.slice(2));
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync  = require('browser-sync').create();
+// var browserSync  = require('browser-sync').create();
 var changed      = require('gulp-changed');
 var concat       = require('gulp-concat');
 var flatten      = require('gulp-flatten');
@@ -130,11 +130,11 @@ var jsTasks = function(filename) {
       return gulpif(enabled.maps, sourcemaps.init());
     })
     .pipe(concat, filename)
-    .pipe(uglify, {
-      compress: {
-        'drop_debugger': enabled.stripJSDebug
-      }
-    })
+    // .pipe(uglify, {
+    //   compress: {
+    //     'drop_debugger': enabled.stripJSDebug
+    //   }
+    // })
     .pipe(function() {
       return gulpif(enabled.rev, rev());
     })
@@ -151,7 +151,7 @@ var jsTasks = function(filename) {
 var writeToManifest = function(directory) {
   return lazypipe()
     .pipe(gulp.dest, path.dist + directory)
-    .pipe(browserSync.stream, {match: '**/*.{js,css}'})
+    // .pipe(browserSync.stream, {match: '**/*.{js,css}'})
     .pipe(rev.manifest, revManifest, {
       base: path.dist,
       merge: true
@@ -205,7 +205,7 @@ gulp.task('fonts', function() {
   return gulp.src(globs.fonts)
     .pipe(flatten())
     .pipe(gulp.dest(path.dist + 'fonts'))
-    .pipe(browserSync.stream());
+    // .pipe(browserSync.stream());
 });
 
 // ### Images
@@ -218,7 +218,7 @@ gulp.task('images', function() {
       svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
     }))
     .pipe(gulp.dest(path.dist + 'images'))
-    .pipe(browserSync.stream());
+    // .pipe(browserSync.stream());
 });
 
 // ### JSHint
@@ -243,14 +243,16 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // build step for that asset and inject the changes into the page.
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
-  browserSync.init({
-    files: ['{lib,templates}/**/*.php', '*.php', '{lib,templates}/**/*.twig', '*.twig'],
-    proxy: config.devUrl,
-    snippetOptions: {
-      whitelist: ['/wp-admin/admin-ajax.php'],
-      blacklist: ['/wp-admin/**']
-    }
-  });
+  // browserSync.init({
+  //   files: ['{lib,templates}/**/*.php', '*.php', '{lib,templates}/**/*.twig', '*.twig'],
+  //   // proxy: config.devUrl,
+  //   proxy: 'localhost:8000',
+  //   port: 8000,
+  //   snippetOptions: {
+  //     whitelist: ['/wp-admin/admin-ajax.php'],
+  //     blacklist: ['/wp-admin/**']
+  //   }
+  // });
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);

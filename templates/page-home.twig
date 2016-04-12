@@ -1,0 +1,60 @@
+{% extends "templates/base.twig" %}
+
+{% block content %}
+
+	{% for item in post.get_field('hero') %}
+		<section id="hero" data-bg="{{ post.thumbnail.src|resize(1200,800) }}" class="cover fixed">
+			<div class="row">
+				<div class="column medium-8 large-5 large-offset-1">
+					<div class="panel">
+						<h1 style="margin-bottom: 0.5em;">
+							{{ item.headline }}
+						</h1>
+						<p>
+							{{ item.content }}
+						</p>
+						<a href="{{ item.button_link|default('#section-1') }}" class="button hollow white" style="margin-top: 1em;">
+							{{ item.button_text }} <i class="icon-arrow-right"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endfor %}
+
+	<div id="bumper">
+		<div class="row small-up-1 medium-up-3">
+			{% for item in post.get_field('bumper') %}
+				<div class="column text-center">
+					<a href="{{ item.link }}">
+						<h3>
+							<i>{{ item.first_word }}</i>
+							<b>{{ item.second_word }}</b>
+						</h3>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+
+
+	{% for section in post.get_field('sections') %}
+		<section class="feature padding cover fixed" data-bg="{{ section.image|resize(1200,800) }}" id="section-{{ loop.index }}">
+			<div class="row">
+				<div class="column medium-8 large-6 {% if loop.index0 % 2 %}medium-offset-4 large-offset-6{% endif %}">
+					<div class="panel bg-white">
+						<h3>{{ section.headline }}</b> </h3>
+						<p class="lead">
+							{{ section.subheading }}
+						</p>
+						<p>
+							{{ section.content }}
+						</p>
+						<a href="{{ section.button_link }}" class="button hollow">{{ section.button_text }} <i class="icon-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endfor %}
+
+{% endblock %}

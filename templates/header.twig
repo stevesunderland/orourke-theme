@@ -1,20 +1,17 @@
-<header class="banner">
-    <div class="container">
-        <h1><a class="brand" href="{{ function('home_url', '/') }}">{{ function('bloginfo', 'name') }}</a></h1>
-        <nav class="nav-primary">
-
+<nav>
+    <div class="row expanded column">
+        <a href="#" class="menu-toggle">
+            <i class="icon-menu"></i>
+        </a>
+        <ul class="menu hide-for-small-only">
             {% for item in menu.get_items %}
-                <li class="nav-main-item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
-                    {% if item.get_children %}
-                        <ul class="nav-drop">
-                            {% for child in item.get_children %}
-                                <li class="nav-drop-item"><a href="{{child.get_link}}">{{child.title}}</a></li>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
+                <li class="nav-main-item {{item.classes | join(' ')}}">
+                    <a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
                 </li>
             {% endfor %}
-
-        </nav>
+        </ul>
+        <a href="/" class="menu-logo">
+            <img src="{{ site.url }}/wp-content/themes/orourke-twig/assets/images/orourke-logo-black.svg" alt="" style="height: 30px; width: 200px; margin: 0.7em 0;">
+        </a>
     </div>
-</header>
+</nav>

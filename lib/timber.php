@@ -30,6 +30,9 @@ class TwigSageTheme extends TimberSite {
 
         /* Menu */
         $context['menu'] = new TimberMenu('primary_navigation');
+        $context['footer_menu'] = new TimberMenu('footer_menu');
+        $context['footer_submenu'] = new TimberMenu('footer_submenu');
+        $context['overlay_menu'] = new TimberMenu('overlay_menu');
 
         /* Site info */
         $context['site'] = $this;

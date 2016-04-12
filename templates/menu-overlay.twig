@@ -1,0 +1,36 @@
+<div id="menu-overlay" class="">
+	<div class="row expanded collapse">
+		<div class="column small-6">
+			<a href="#" class="menu-toggle">
+				<i class="icon-close"></i>
+			</a>
+		</div>
+		<div class="column small-6 text-right">
+			<a href="/" class="menu-logo">
+	            <img src="/wp-content/themes/orourke-twig/assets/images/orourke-logo-white.svg" alt="" style="height: 30px; width: 200px; margin: 0.7em 0;">
+	        </a>
+		</div>
+	</div>
+	<div class="row expanded">
+		<div class="column large-6">
+			{% for item in overlay_menu.get_items %}
+				<h1>
+					<a href="{{ item.get_link }}">{{ item.title }}</a>
+				</h1>
+			{% endfor %}
+			<div class="social">
+				{% for item in ['facebook','twitter','linkedin','behance','pinterest'] %}
+					<a href="#"><i class="icon-{{ item }}"></i></a>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="column large-6 contact">
+			<address>
+				7 Prince Place<br>
+				Newburyport MA<br>
+				978.465.5955<br>
+				<a href="mailto:hello@orourkehospitality.com">hello@orourkehospitality.com</a>
+			</address>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,47 @@
+{% extends "templates/base.twig" %}
+
+{% block content %}
+    {% for post in posts %}
+        <section id="hero" data-bg="{{ post.thumbnail }}" class="cover">
+            <div class="overlay">
+                <div class="row">
+                    <div class="column text-center">
+                        <h1>
+                            {{ post.title }}
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="padding">
+            <div class="row">
+            	<div class="column medium-8">
+    		        {{ post.content }}
+            	</div>
+                <div class="column medium-4">
+                    <h4>Related Work</h4>
+                    <ul>
+                        {% for item in related_work %}
+                            <li>
+                                <a href="{{ item.link }}">{{ item.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    <h4>Related Articles</h4>
+                    <ul>
+                        {% for item in related_articles %}
+                            <li>
+                                <a href="{{ item.link }}">{{ item.name }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <a href="#" class="button hollow">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "templates/base.twig" %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="padding" style="padding:5em;"></div>
+        <section class="team-member">
+            <div class="row">
+                <div class="column medium-4">
+                    <img data-src="{{ post.thumbnail.src|resize(300,300) }}" alt="{{ post.title }}" class="circle">
+                </div>
+                <div class="column medium-8">
+                    <div class="padding" style="padding:3em;"></div>
+                    <h1>{{ post.title }}</h1>
+                    <h4>{{ post.job_title }}</h4>
+                    <div class="padding" style="padding:1em;"></div>
+                    {{ post.content }}
+                    <a href="/approach/" class="button link">&larr; Back to Team</a>
+                    <div class="padding"></div>
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+{% endblock %}

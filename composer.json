@@ -1,12 +1,12 @@
 {
-  "name": "rabota/sage-twig-theme",
-  "description": "Starter theme - mix of Sage and Timber theme",
+  "name": "orourke/sage-twig-theme",
+  "description": "O'Rourke Sage Theme",
   "type":"wordpress-theme",
   "minimum-stability" : "stable",
   "authors": [
       {
-          "name": "Vincent Kranenodnk",
-          "email": "kranendonk.vincent@gmail.com"
+          "name": "Sunderland Studio",
+          "email": "mail@sunderlandstudio.com"
       }
   ],
   "extra": {

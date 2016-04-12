@@ -7,22 +7,43 @@
 
         {% include 'templates/header.twig' %}
 
-        <div class="wrap container" role="document">
-            <div class="content row">
-                <main class="col-md-8">
-                    {% block content %}{% endblock %}
-                </main>
-                {% if display_sidebar %}
-                    <aside class="sidebar col-md-4">
-                        {% block sidebar %}
-                            {% include 'templates/sidebar.twig' %}
-                        {% endblock %}
-                    </aside>
-                {% endif %}
-            </div>
+        <div class="container">
+            {% block content %}{% endblock %}
         </div>
 
         {% include 'templates/footer.twig' %}
+
+        {% include 'templates/menu-overlay.twig' %}
+
+        <div id="bug">
+        	<a href="#" class="button primary">Contact Us</a>
+        </div>
+
+        <script type="text/javascript">
+            var Site = {
+              init: function() {
+                Site.menu();
+                Site.lightbox();
+              },
+              menu: function() {
+                jQuery(document).on('click', '.menu-toggle', function(event) {
+                  event.preventDefault();
+                  jQuery('#menu-overlay').toggleClass('active');
+                });
+              },
+              lightbox: function() {
+                jQuery('.lightbox-parent').Chocolat({
+                  imageSelector: '.lightbox-image',
+                  loop: true,
+                  enableZoom: false
+                });
+              }
+            }
+
+            jQuery(document).ready(function(){
+              Site.init();
+            });
+        </script>
 
     </body>
 

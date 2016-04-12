@@ -4,11 +4,18 @@
 
     {% for post in posts %}
 
-        <div class="page-header">
-            <h1>{{ post.title }}</h1>
-        </div>
+        <section id="hero" class=" bg-gray">
+        	<div class="row column text-center">
+	            <h1>{{ post.title }}</h1>
 
-        {{ post.content }}
+        	</div>
+        </section>
+
+        <section>
+        	<div class="row column">
+		        {{ post.content }}
+        	</div>
+        </section>
 
     {% endfor %}
 

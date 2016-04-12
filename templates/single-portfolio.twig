@@ -1,0 +1,61 @@
+{% extends "templates/base.twig" %}
+
+{% block content %}
+    {% for post in posts %}
+        <section id="hero" data-bg="{{ post.thumbnail }}" class="cover">
+            <div class="overlay">
+                <div class="row">
+                    <div class="column">
+                        <div class="panel text-center">
+                            <h1>
+                                &nbsp;
+                                {# {{ post.title }} #}
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="padding">
+            <div class="row column medium-10 medium-centered large-8">
+                <h1>{{ post.client }}</h1>
+                <h4 style="margin-bottom: 1em;">{{ post.role }}</h4>
+
+                {% if post.get_field('video') %}
+                    <div class="embed-container">
+                        {{ post.get_field('video') }}
+                    </div>
+
+                {% endif %}
+
+                {{ (post.content) }}
+
+                {% if post.link %}
+                    <a href="{{ post.get_field('link') }}" rel="external" class="button hollow" style="margin-top: 2em;">Visit the site <i class="icon-arrow-right"></i></a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="grid">
+            {% set size = post.get_field('gallery')|length %}
+            <div class="lightbox-parent row expanded collapse small-up-1 medium-up-2 {% if size < 3 or size == 4  %}large-up-2{% else %}large-up-3{% endif %}" data-lightbox-title="{{ post.title }}">
+                {% for item in post.get_field('gallery') %}
+                    <div class="column text-center">
+                        <a href="{{ item.url }}" class="lightbox-image" title="{{ item.caption }}">
+                            <div class="item" data-bg="{{ item.url }}" style="background-size:cover;background-position:center center;margin:0.5em;">
+                                <div class="table">
+                                    <div class="cell">
+                                        <div class="padding">
+                                            {# empty space #}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

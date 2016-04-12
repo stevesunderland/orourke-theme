@@ -1,0 +1,71 @@
+{% extends "templates/base.twig" %}
+
+{% block content %}
+
+    {% for post in posts %}
+
+        <section id="hero" data-bg="{{ post.thumbnail }}" class="cover">
+            <div class="overlay">
+                <div class="row">
+                    <div class="column text-center">
+                        <h1>
+                            {{ post.title }}
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="padding">
+        	<div class="row column text-center medium-8 medium-centered">
+		        {{ post.content }}
+        	</div>
+        </section>
+
+        <section class="bg-gray padding team">
+        	<div class="row column text-center">
+        		<h3>Leadership</h3>
+        	</div>
+        	<div class="row small-up-1 medium-up-3">
+				{% for item in leadership %}
+					<div class="column text-center">
+						<img data-src="{{ item.get_thumbnail.get_src|resize(300, 300, 'top') }}" />
+						<h4>
+							{{ item.title }}
+						</h4>
+						<p>
+							{{ item.job_title }}
+						</p>
+						<a href="{{ item.link }}" class="button link">Full Bio <i class="icon-arrow-right"></i></a>
+					</div>
+				{% endfor %}
+        	</div>
+        </section>
+
+        <section class="padding team">
+        	<div class="row column text-center">
+        		<h3>Our Team</h3>
+        	</div>
+        	<div class="row small-up-1 medium-up-3">
+				{% for item in team_members %}
+					<div class="column text-center" style="margin-bottom: 2em;">
+						<img data-src="{{ item.get_thumbnail.get_src|resize(400, 400, 'top') }}" style="height:200px;width:200px;"/>
+						<h4>
+							{{ item.title }}
+						</h4>
+						<p>
+							{{ item.job_title }}
+						</p>
+						<a href="{{ item.link }}" class="button link">Full Bio <i class="icon-arrow-right"></i></a>
+					</div>
+				{% endfor %}
+        	</div>
+        	<div class="row column text-center">
+        		<a href="#" class="button hollow">Join Our Team <i class="icon-arrow-right"></i></a>
+        	</div>
+        </section>
+
+
+    {% endfor %}
+
+{% endblock %}
