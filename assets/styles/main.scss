@@ -327,8 +327,11 @@ nav {
 	}
 }
 .feature {
-	padding-top: 8em;
-	padding-bottom: 8em;
+
+	.overlay {
+		padding-top: 8em;
+		padding-bottom: 8em;
+	}
 
 	.panel {
 		@extend .padding;
