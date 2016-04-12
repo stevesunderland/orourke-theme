@@ -15,22 +15,7 @@
 			</div>
 		</div>
 		<div class="column medium-8 text-right">
-			<form class="newsletter" action="">
-				<h6>Sign up for our newsletter</h6>
-				<div class="input-group">
-					<input type="email" class="input-group-field" placeholder="your@email.address">
-					<div class="input-group-button">
-						<input type="submit" class="button " value="Subscribe">
-					</div>
-				</div>
-			</form>
-{# 			<ul class="menu footer-menu align-right">
-				{% for item in footer_menu.get_items %}
-					<li>
-						<a href="{{item.get_link}}">{{ item.title }}</a>
-					</li>
-				{% endfor %}
-			</ul> #}
+			{% include 'templates/newsletter.twig' %}
 			<ul class="menu footer-submenu align-right">
 				{% for item in footer_submenu.get_items %}
 					<li>

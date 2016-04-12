@@ -560,6 +560,34 @@ footer {
 			}
 		}
 	}
+	form {
+		margin-top: 4em;
+
+		h6 {
+			text-align: right;
+		}
+
+		input[type="email"] {
+			background-color: transparent;
+			border: 2px solid #fff;
+			box-shadow: none;
+			max-width: 320px;
+			float: right;
+			color: #fff;
+
+			&:active, &:focus, &:hover {
+				border: 2px solid $primary;
+				box-shadow: none;
+
+			}
+		}
+		input.button {
+			background-color: #fff;
+			border-color: #fff;
+			color: #000;
+
+		}
+	}
 	.menu-toggle {
 		display: block;
 		// float: left;
