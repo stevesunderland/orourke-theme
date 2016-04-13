@@ -425,19 +425,7 @@ nav {
 		}
 	}
 }
-.intel {
-	h3 {
-		@extend .serif;
-		text-transform: none;
-		font-weight: normal;
-		margin-top: 1.25em;
-		margin-bottom: 1em;
-	}
-	.button {
-		margin-top: 3em;
-		margin-bottom: 5em;
-	}
-}
+
 
 // footer
 
@@ -730,5 +718,46 @@ footer {
 			font-size: 2.5em;
 			color: #000;
 		}
+	}
+}
+
+
+// INTEL PAGE
+
+.menu.categories {
+	li {
+		a {
+			text-transform: uppercase;
+			font-weight: bold;
+			color: #000;
+			letter-spacing: .1em;
+
+			&:hover {
+				color: $primary;
+			}
+		}
+	}
+}
+
+.intel {
+	h3 {
+		@extend .serif;
+		text-transform: none;
+		font-weight: normal;
+		margin-top: 1.25em;
+		margin-bottom: 1em;
+	}
+	h6 {
+		color: #fff;
+		@extend .sans;
+		font-style: normal;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size: .8em;
+		letter-spacing: .1em;
+	}
+	.button {
+		margin-top: 3em;
+		margin-bottom: 5em;
 	}
 }

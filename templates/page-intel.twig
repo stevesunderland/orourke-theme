@@ -6,8 +6,8 @@
 
     <section class="padding">
     	<div class="menu-centered">
-    		<ul class="menu">
-    			{% for item in tags %}
+    		<ul class="menu categories">
+    			{% for item in categories %}
 					<li><a href="#">{{ item }}</a></li>
     			{% endfor %}
     		</ul>
@@ -23,6 +23,9 @@
 							<div class="table">
 								<div class="cell overlay">
 									<div class="padding">
+										<h6>
+											{{ categories[loop.index0 % 3] }}
+										</h6>
 										<h4>
 											{{ item }}
 										</h4>
