@@ -50,6 +50,16 @@ $gray-light: #f5f5f5;
 	}
 }
 
+.padding-tall {
+	padding-top: 2em;
+	padding-bottom: 2em;
+
+	@media(min-width: 640px) {
+		padding-top: 4em;
+		padding-bottom: 4em;
+	}
+}
+
 .table {
 	height: 100%;
 	width: 100%;
@@ -347,6 +357,10 @@ nav {
 			content: "";
 		  display: block;
 		  padding-top: 90%;
+
+		  .team & {
+		  	padding-top: 125%;
+		  }
 
 		}
 		.item {
