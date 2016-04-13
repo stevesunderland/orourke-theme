@@ -4,12 +4,19 @@
 
     {% include 'templates/hero.twig' %}
 
+    <section class="padding">
+    	<div class="menu-centered">
+    		<ul class="menu">
+    			{% for item in tags %}
+					<li><a href="#">{{ item }}</a></li>
+    			{% endfor %}
+    		</ul>
+    	</div>
+    </section>
+
 	<section class="intel">
-		<div class="row column text-center">
-			<h3 style="margin-bottom: 1em;">Recent Posts</h3>
-		</div>
 		<div class="row expanded collapse small-up-1 medium-up-3 grid" style="padding:0.1em;">
-			{% for item in blog_posts %}
+			{% for item in posts %}
 				<div class="column text-center">
 					<a href="{{ item.link }}">
 						<div class="item cover" data-bg="{{ item.thumbnail.src|resize(600,600) }}" style="margin:0.1em;">
@@ -29,69 +36,7 @@
 		</div>
 		<div class="row column text-center">
 			<a href="#" class="button hollow black">
-				View All Recent Posts <i class="icon-arrow-right"></i>
-			</a>
-		</div>
-	</section>
-
-	<section class="bg-gray intel" class="intel" style="">
-		<div class="row column text-center">
-			<h3 style="margin-bottom: 1em;">Case Studies</h3>
-		</div>
-		<div class="row expanded collapse small-up-1 medium-up-3 grid" style="padding:0.1em;">
-			{% for item in case_studies %}
-				<div class="column text-center">
-					<a href="{{ item.link }}">
-						<div class="item cover" data-bg="{{ item.thumbnail.src|resize(600,600) }}" style="margin:0.1em;">
-							<div class="table">
-								<div class="cell overlay">
-									<div class="padding">
-										<h4>
-											{{ item|replace({ 'Case Study &#8211; ': '' }) }}
-										</h4>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-			{% endfor %}
-		</div>
-		<div class="row column text-center">
-			<a href="#" class="button hollow black">
-				View All Case Studies <i class="icon-arrow-right"></i>
-			</a>
-		</div>
-	</section>
-
-
-
-	<section class="intel">
-		<div class="row column text-center">
-			<h3 style="margin-bottom: 1em;">White Papers</h3>
-		</div>
-		<div class="row expanded collapse small-up-1 medium-up-3 grid" style="padding:0.1em;">
-			{% for item in blog_posts %}
-				<div class="column text-center">
-					<a href="{{ item.link }}">
-						<div class="item cover" data-bg="{{ item.thumbnail.src|resize(600,600) }}" style="margin:0.1em;">
-							<div class="table">
-								<div class="cell overlay">
-									<div class="padding">
-										<h4>
-											{{ item }}
-										</h4>
-									</div>
-								</div>
-							</div>
-						</div>
-					</a>
-				</div>
-			{% endfor %}
-		</div>
-		<div class="row column text-center">
-			<a href="#" class="button hollow black">
-				View All White Papers <i class="icon-arrow-right"></i>
+				View More Posts <i class="icon-arrow-right"></i>
 			</a>
 		</div>
 	</section>

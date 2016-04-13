@@ -6,27 +6,13 @@ $context['post'] = $post;
 // BLOG POSTS
 $args = array(
     'post_type' => 'post',
-    'posts_per_page' => 3
+    'posts_per_page' => 9
 );
-$context['blog_posts'] = Timber::get_posts($args);
-// $context['blog_posts'] = array('one','two','three');
+$context['posts'] = Timber::get_posts($args);
 
 
-// CASE STUDIES
-$args = array(
-    'post_parent' => 7270,
-    'post_type' => 'page',
-    'posts_per_page' => 3
-);
-$context['case_studies'] = Timber::get_posts($args);
-
-// CASE STUDIES
-$args = array(
-    'post_parent' => 7270,
-    'post_type' => 'page',
-    'posts_per_page' => 3
-);
-$context['case_studies'] = Timber::get_posts($args);
+// CATEGORIES
+$context['categories'] = array('Blog Posts', 'Case Studies', 'White Papers');
 
 
 Timber::render(array('templates/page-' . $post->post_name . '.twig', 'templates/page.twig'), $context);
