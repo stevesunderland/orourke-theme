@@ -15,29 +15,64 @@
 
         <section class="padding">
             <div class="row">
-            	<div class="column medium-8">
+            	<div class="column medium-8 medium-centered">
     		        {{ post.content }}
             	</div>
-                <div class="column medium-4">
-                    <h4>Related Work</h4>
-                    <ul>
-                        {% for item in related_work %}
-                            <li>
-                                <a href="{{ item.link }}">{{ item.name }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-
-                    <h4>Related Articles</h4>
-                    <ul>
-                        {% for item in related_articles %}
-                            <li>
-                                <a href="{{ item.link }}">{{ item.name }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
             </div>
         </section>
+
+        <div class="row column text-center">
+            <h4>Related Work</h4>
+        </div>
+        <div class="row expanded small-up-1 medium-up-3 grid">
+            {% for item in related_work %}
+                <div class="column text-center">
+                    <a href="{{ item.link }}">
+                        <div class="item cover" data-bg="{{ item.thumbnail.src|resize(600,600) }}" style="margin:0.1em;">
+                            <div class="table">
+                                <div class="cell overlay">
+                                    <div class="padding">
+                                        <h4>
+                                            {{ item }}
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row column text-center">
+            <h4 style="margin-top: 2em;">Related Articles</h4>
+        </div>
+        <div class="row expanded small-up-1 medium-up-3 grid">
+            {% for item in related_articles %}
+                <div class="column text-center">
+                    <a href="{{ item.link }}">
+                        <div class="item cover" data-bg="{{ item.thumbnail.src|resize(600,600) }}" style="margin:0.1em;">
+                            <div class="table">
+                                <div class="cell overlay">
+                                    <div class="padding">
+                                        <h4>
+                                            {{ item }}
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="column medium-4">
+                <ul>
+                </ul>
+
+                <ul>
+                </ul>
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}
