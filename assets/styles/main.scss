@@ -275,16 +275,9 @@ nav {
 
 #hero {
 	background-color: #ddd;
-	padding-top: 14em;
-	padding-bottom: 10em;
 	position: relative;
+	height: 75vh;
 
-	.overlay {
-		position: absolute;
-		top: 0; bottom:0;
-		left:0; right:0;
-		padding-top: 12em;
-	}
 	h1, h4, p {
 		color: #fff;
 	}

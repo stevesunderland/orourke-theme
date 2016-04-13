@@ -1,17 +1,8 @@
 {% extends "templates/base.twig" %}
 
 {% block content %}
-	<section id="hero" data-bg="{{ post.thumbnail }}" class="cover">
-		<div class="overlay">
-			<div class="row">
-				<div class="column text-center">
-					<h1>
-						{{ post.title }}
-					</h1>
-				</div>
-			</div>
-		</div>
-	</section>
+
+	{% include 'templates/hero.twig' %}
 
 	<section class="grid">
 		<div class="row expanded collapse small-up-1 medium-up-3">
