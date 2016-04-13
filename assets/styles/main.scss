@@ -391,6 +391,10 @@ nav {
 	    	font-style: normal;
 	    	text-transform: uppercase;
 	    	letter-spacing: .1em;
+
+	    	.team & {
+	    		margin-top: 70%;
+	    	}
     	}
 
     	&:hover {
