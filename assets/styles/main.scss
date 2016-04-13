@@ -366,13 +366,17 @@ nav {
 		    &:hover {
 		    	background-size: auto 150%;
 		    }
-
-
 		}
 	}
     a {
     	h4 {
+	    	@extend .sans;
 	    	color: #fff;
+	    	font-size: 1.5em;
+	    	font-weight: bold;
+	    	font-style: normal;
+	    	text-transform: uppercase;
+	    	letter-spacing: .1em;
     	}
 
     	&:hover {
