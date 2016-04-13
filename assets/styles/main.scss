@@ -207,6 +207,7 @@ h6 {
 p {
 	// @extend .sans;
 	font-weight: 300;
+	font-size: 1.2em;
 
 	&.lead {
 		@extend .serif;
