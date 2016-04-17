@@ -280,6 +280,12 @@ nav {
 	.home & {
 		height: 100vh;
 		position: relative;
+
+		.cell {
+			@media(min-width: 640px) {
+				padding-bottom: 8em;
+			}
+		}
 	}
 }
 #bumper {
