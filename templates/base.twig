@@ -91,7 +91,9 @@
                     //
                     path.data("resized-imgW", imgW);
                     path.data("resized-imgH", imgH);
-                    path.css("background-size", imgW + "px " + imgH + "px");
+
+                    // path.css("background-size", imgW + "px " + imgH + "px");
+                    path.css("background-size", "auto 110%");
                 });
             }
             jQuery(window).resize(backgroundResize);
@@ -106,6 +108,7 @@
                 var currentWindow = (topWindow + bottomWindow) / 2;
                 jQuery(".parallax").each(function(i){
                     var path = jQuery(this);
+
                     var height = path.height();
                     var top = path.offset().top;
                     var bottom = top + height;
