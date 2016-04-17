@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for post in posts %}
-        <section id="hero" data-bg="{{ post.thumbnail }}" class="cover" style="height: auto;">
+        <section id="hero" data-bg="{{ post.thumbnail.src|resize(1000,600) }}" class="parallax" style="height: auto;">
             <div class="overlay">
                 <div class="row">
                     <div class="column">
