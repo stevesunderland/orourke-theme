@@ -321,23 +321,29 @@ nav {
 		font-size: 0.7em;
 	}
 }
-.feature {
-
+.parallax {
 	.overlay {
 		padding-top: 8em;
 		padding-bottom: 8em;
 	}
-
-	.panel {
-		@extend .padding;
-		background-color: #fff;
-
-		.button {
-			margin-top: 2em;
-			margin-bottom: 0;
-		}
-	}
 }
+// .feature {
+
+// 	.overlay {
+// 		padding-top: 8em;
+// 		padding-bottom: 8em;
+// 	}
+
+// 	.panel {
+// 		@extend .padding;
+// 		background-color: #fff;
+
+// 		.button {
+// 			margin-top: 2em;
+// 			margin-bottom: 0;
+// 		}
+// 	}
+// }
 .grid {
 	padding: 0.05em;
 
