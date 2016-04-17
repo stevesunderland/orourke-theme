@@ -3,9 +3,10 @@
 {% block content %}
     {% for post in posts %}
 
-       <section id="hero" data-bg="{{ post.thumbnail }}" class="cover" style="height:auto;">
+
+       <section id="hero" data-bg="{{ post.thumbnail }}" class="parallax" style="height:auto;">
             <div class="overlay table">
-                <div class="cell text-center" style="padding: 12em 0 10em;">
+                <div class="cell text-center" style="padding: 10em 0 8em;">
                     <h1>
                         {{ post.title }}
                     </h1>
