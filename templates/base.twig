@@ -24,6 +24,7 @@
               init: function() {
                 Site.menu();
                 Site.lightbox();
+                Site.grid();
               },
               menu: function() {
                 jQuery(document).on('click', '.menu-toggle', function(event) {
@@ -37,6 +38,23 @@
                   loop: true,
                   enableZoom: false
                 });
+              },
+              grid: function() {
+                if ( jQuery('.intel').length ) {
+                    console.info('intel');
+                    // jQuery('.grid').isotope({
+                    //   itemSelector: '.grid-item',
+                    //   masonry: {
+                    //     columnWidth: 200
+                    //   }
+                    // });
+                    var grid = document.querySelector('.grid');
+                    var iso = new Isotope( grid, {
+                      // options
+                      itemSelector: '.grid-item',
+                      layoutMode: 'fitRows'
+                    });
+                }
               }
             }
 

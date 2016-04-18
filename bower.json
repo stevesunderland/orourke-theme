@@ -9,9 +9,15 @@
   "dependencies": {
     "foundation-sites": "~6.2.0",
     "chocolat": "~0.4.12",
-    "lazyloadxt": "~1.0.5"
+    "lazyloadxt": "~1.0.5",
+    "isotope": "~2.2.2"
   },
   "overrides": {
+    "isotope": {
+      "main": [
+        "./dist/isotope.pkgd.js"
+      ]
+    },
     "foundation-sites": {
       "main": [
         "./dist/foundation.css",

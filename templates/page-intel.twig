@@ -7,24 +7,26 @@
     <section class="padding">
     	<div class="menu-centered">
     		<ul class="menu categories">
-    			{% for item in categories %}
-					<li><a href="#">{{ item }}</a></li>
+    			{% for category in categories %}
+					<li><a href="#{{ category.slug }}">{{ category.cat_name }}</a></li>
     			{% endfor %}
     		</ul>
     	</div>
     </section>
 
 	<section class="intel">
-		<div class="row expanded collapse small-up-1 medium-up-3 grid" style="padding:0.1em;">
+		<div class="row expanded collapse small-up-1 medium-up-2 large-up-3 grid" style="padding:0.1em;">
 			{% for item in posts %}
-				<div class="column text-center">
+				<div class="column text-center grid-item">
 					<a href="{{ item.link }}">
 						<div class="item cover" data-bg="{{ item.thumbnail.src|resize(600,600) }}" style="margin:0.1em;">
 							<div class="table">
 								<div class="cell overlay">
 									<div class="padding">
 										<h6>
-											{{ categories[loop.index0 % 3] }}
+											{# {{ categories[loop.index0 % 3].cat_name }} #}
+											{# {{ item.categories }} #}
+											{{ item.category }}
 										</h6>
 										<h4>
 											{{ item }}
@@ -43,4 +45,5 @@
 			</a>
 		</div>
 	</section>
+
 {% endblock %}
