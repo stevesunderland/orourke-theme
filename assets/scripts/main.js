@@ -38,6 +38,14 @@
       init: function() {
         // JavaScript to be fired on the about us page
       }
+    },
+    'intel': {
+      init: function() {
+        console.info('intel init');
+      },
+      finalize: function() {
+        console.info('intel finalize');
+      }
     }
   };
 

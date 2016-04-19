@@ -734,6 +734,12 @@ footer {
 				color: $primary;
 			}
 		}
+		&.active {
+			& > a {
+				background: transparent;
+				color: $primary;
+			}
+		}
 	}
 }
 
@@ -786,4 +792,11 @@ footer {
 // .fullscreen.overflow .content-a {
 //     height:auto;
 //     min-height:100%;
+// }
+
+
+
+// .menu .active>a {
+// 	background: transparent;
+// 	color: $primary;
 // }

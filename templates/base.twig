@@ -16,10 +16,11 @@
         {% include 'templates/partials/menu-overlay.twig' %}
 
         <div id="bug">
-        	<a href="#" class="button primary">Contact Us</a>
+        	<a href="{{ site.url }}?page_id=1167" class="button primary">Contact Us</a>
         </div>
 
         <script type="text/javascript">
+            $ = jQuery;
             var Site = {
               init: function() {
                 Site.menu();
@@ -27,45 +28,35 @@
                 Site.grid();
               },
               menu: function() {
-                jQuery(document).on('click', '.menu-toggle', function(event) {
+                $(document).on('click', '.menu-toggle', function(event) {
                   event.preventDefault();
-                  jQuery('#menu-overlay').toggleClass('active');
+                  $('#menu-overlay').toggleClass('active');
                 });
               },
               lightbox: function() {
-                jQuery('.lightbox-parent').Chocolat({
+                $('.lightbox-parent').Chocolat({
                   imageSelector: '.lightbox-image',
                   loop: true,
                   enableZoom: false
                 });
               },
               grid: function() {
-                if ( jQuery('.intel').length ) {
-                    console.info('intel');
-                    // jQuery('.grid').isotope({
-                    //   itemSelector: '.grid-item',
-                    //   masonry: {
-                    //     columnWidth: 200
-                    //   }
-                    // });
-                    var grid = document.querySelector('.grid');
-                    var iso = new Isotope( grid, {
-                      // options
-                      itemSelector: '.grid-item',
-                      layoutMode: 'fitRows'
-                    });
-                }
+                $('.intel').jscroll({
+                    debug: true,
+                    loadingHtml: '<div class="text-center"><button class="button hollow">Loading...</button></div>',
+                    padding: 20,
+                    nextSelector: '.pagination-next a',
+                    contentSelector: '.grid',
+                    callback: function() {
+                        $('.item').lazyLoadXT();
+                    }
+                });
               }
             }
 
-            jQuery(document).ready(function(){
+            $(document).ready(function(){
               Site.init();
             });
-
-
-
-
-
 
 
 

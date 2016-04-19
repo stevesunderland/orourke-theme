@@ -1,4 +1,9 @@
 <?php
+global $paged;
+if (!isset($paged) || !$paged){
+    $paged = 1;
+}
+
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
@@ -7,12 +12,14 @@ $context['post'] = $post;
 $args = array(
     'post_type' => 'post',
     // 'posts_per_page' => 9
-    'posts_per_page' => 90
+    'posts_per_page' => 15
 );
+
+query_posts($args);
+
 $context['posts'] = Timber::get_posts($args);
 
-
-
+$context['pagination'] = Timber::get_pagination();
 
 
 // CATEGORIES
@@ -28,6 +35,7 @@ foreach ($post->intel_categories as $key => $value) {
 
 // $context['categories'] = array('Blog Posts', 'Case Studies', 'White Papers');
 $context['categories'] = $categories;
+
 
 
 Timber::render(array('templates/page-' . $post->post_name . '.twig', 'templates/page.twig'), $context);

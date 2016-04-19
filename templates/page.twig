@@ -4,15 +4,14 @@
 
     {% for post in posts %}
 
-        <section id="hero" class=" bg-gray">
-        	<div class="row column text-center">
-	            <h1>{{ post.title }}</h1>
-        	</div>
-        </section>
 
-        <section>
-        	<div class="row column">
-		        {{ post.content }}
+        {% include 'templates/partials/hero.twig' %}
+
+        <section class="padding">
+        	<div class="row">
+                <div class="column medium-10 medium-centered large-8">
+    		        {{ post.content }}
+                </div>
         	</div>
         </section>
 
