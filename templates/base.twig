@@ -101,8 +101,8 @@
                     path.data("resized-imgW", imgW);
                     path.data("resized-imgH", imgH);
 
-                    // path.css("background-size", imgW + "px " + imgH + "px");
-                    path.css("background-size", "auto 110%");
+                    path.css("background-size", imgW + "px " + imgH + "px");
+                    // path.css("background-size", "auto 110%");
                 });
             }
             jQuery(window).resize(backgroundResize);
