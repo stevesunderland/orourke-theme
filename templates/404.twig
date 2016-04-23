@@ -2,18 +2,22 @@
 
 {% block content %}
 
-    <div class="page-header">
-        <h1>{{ post.title }}</h1>
+    <section id="hero">
+        <div class="overlay table">
+            <div class="cell text-center">
+                <h1>
+                    404
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="row column text-center">
+        <h4 style="margin-top: 1em;">{{ __('Sorry, but the page you were trying to view does not exist.', 'sage') }}</h4>
+        <br>
+        <a href="{{ site.url }}" class="button hollow">Go Home &rarr;</a>
+        {# {{ function('get_search_form') }} #}
     </div>
 
-    <div class="alert alert-warning">
-        {{ __('Sorry, but the page you were trying to view does not exist.', 'sage') }}
-    </div>
-
-    <div class="page-header">
-        <h1>{{ post.title }}</h1>
-    </div>
-
-    {{ function('get_search_form') }}
 
 {% endblock %}

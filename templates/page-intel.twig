@@ -12,24 +12,15 @@
 					<option value="{{ site.url }}?cat={{ category.term_id }}">{{ category.cat_name }}</option>
     			{% endfor %}
     		</select>
-
     		<script>
 			    jQuery(function(){
 			      jQuery('#intelSelect').on('change', function (event) {
 			      	event.preventDefault();
 		              window.location = $(this).val();
-			          // return false;
 			      });
 			    });
 			</script>
     	</div>
-{#     	<div class="menu-centered">
-    		<ul class="menu categories">
-    			{% for category in categories %}
-					<li class="{% if category.cat_name == category_title %}active{% endif %}"><a href="{{ site.url }}?cat={{ category.term_id }}">{{ category.cat_name }}</a></li>
-    			{% endfor %}
-    		</ul>
-    	</div> #}
     </section>
 
 	<section class="intel">
@@ -42,8 +33,6 @@
 								<div class="cell overlay">
 									<div class="padding">
 										<h6>
-											{# {{ categories[loop.index0 % 3].cat_name }} #}
-											{# {{ item.categories }} #}
 											{{ item.category }}
 										</h6>
 										<h4>
@@ -58,13 +47,6 @@
 			{% endfor %}
 			{% include 'templates/partials/pagination.twig' %}
 		</div>
-{# 		<div class="row column text-center">
-			<a href="#" class="button hollow black">
-				View More Posts <i class="icon-arrow-right"></i>
-			</a>
-		</div> #}
-
-
 	</section>
 
 	<style type="text/css">
@@ -72,6 +54,5 @@
 			display: none;
 		}
 	</style>
-
 
 {% endblock %}

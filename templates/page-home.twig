@@ -43,7 +43,6 @@
 		</div>
 	</div>
 
-
 	{% for section in post.get_field('sections') %}
 		<section class="parallax" data-bg="{{ section.image|resize(1200,800) }}" id="section-{{ loop.index }}">
 			<div class="overlay padding">
