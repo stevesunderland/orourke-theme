@@ -46,6 +46,10 @@ $white:	#ffffff;
 	background-color: $white;
 }
 
+.text-gray {
+	color: $gray-light;
+}
+
 .padding {
 	padding: 2em;
 
@@ -499,7 +503,7 @@ footer {
 	display: block;
 	transition: all 1s;
 	z-index: -1;
-	overflow: hidden;
+	overflow: auto;
 	background-color: #000;
 	background-color: #fff;
 	opacity: 0;
@@ -508,6 +512,7 @@ footer {
 	left: 0;
 	right: 0;
 	padding: 0;
+	padding-bottom: 2em;
 	color: #fff;
 
 	&.active {
@@ -538,9 +543,17 @@ footer {
 			&:hover {
 				color: $primary;
 			}
+
+			&.text-gray {
+				color: #999;
+
+				&:hover {
+					color: $primary;
+				}
+			}
 		}
 		@media (min-width: 1024px) {
-			font-size: 4em;
+			font-size: 3.5em;
 		}
 		@media (max-width: 640px) {
 			font-size: 2em;

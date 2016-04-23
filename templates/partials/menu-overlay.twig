@@ -15,7 +15,7 @@
 		<div class="column large-6">
 			{% for item in overlay_menu.get_items %}
 				<h1>
-					<a href="{{ item.get_link }}">{{ item.title }}</a>
+					<a href="{{ item.get_link }}" class="{% for class in item.classes %}{{ class }} {% endfor %}">{{ item.title }}</a>
 				</h1>
 			{% endfor %}
 			<div class="social">
