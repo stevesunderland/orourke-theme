@@ -252,6 +252,13 @@ address {
 	font-style: normal;
 }
 
+select {
+	@extend .sans;
+	font-weight: bold;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
 // NAVIGATION
 
 nav {
@@ -446,20 +453,34 @@ nav {
 
 // footer
 
+.social {
+	margin-top: 1em;
+	margin-bottom: 1em;
+
+	a {
+		text-decoration: none;
+		display: inline-block;
+		font-size: 1.25em;
+		padding: 0.25em 0.5em;
+		background-color: #000;
+		color: #fff; // changed
+		transition: all 0.3s;
+
+		&:hover, &:active, &:focus {
+			background-color: $primary;
+		}
+	}
+}
+
 footer {
 	@extend .padding;
 
 	.social {
-		margin-top: 1em;
+		// margin-top: 1em;
+		margin-bottom: 0;
 
 		a {
-			text-decoration: none;
-			display: inline-block;
-			font-size: 1.25em;
-			padding: 0.25em 0.5em;
-			background-color: #000;
 			color: $gray-light;
-			transition: all 0.3s;
 
 			&:hover, &:active, &:focus {
 				background-color: $primary;
@@ -548,6 +569,7 @@ footer {
 		margin-top: 2em;
 		opacity: 0;
 		color: #fff;
+		font-size: 3.5em;
 
 		a {
 			color: #fff;

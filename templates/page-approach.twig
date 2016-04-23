@@ -17,7 +17,7 @@
         		<h5>Leadership</h5>
         	</div>
         	<div class="row expanded grid small-up-1 medium-up-3">
-				{% for item in leadership %}
+				{% for item in leadership|sort('order') %}
 					<div class="column text-center">
                         <a href="{{ item.link }}">
                             <div class="item cover" data-bg="{{ item.thumbnail.src|resize(600,600) }}" style="margin:0.1em;">
