@@ -16,15 +16,15 @@
 								<p>
 									{{ item.content }}
 								</p>
-								<a href="{{ item.button_link|default('#section-1') }}" style="margin-top: 1em; font-size: 3em; color: #fff;">
-									<i class="icon-arrow-down"></i>
-								</a>
 							</div>
 						</div>
 					</div>
 
 				</div>
 			</div>
+			<a href="{{ item.button_link|default('#section-1') }}" class="scroll-down">
+				<img src="{{ site.url }}/wp-content/themes/orourke-twig/assets/images/arrow_vector.svg" alt="">
+			</a>
 		</section>
 	{% endfor %}
 

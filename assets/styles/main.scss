@@ -349,6 +349,25 @@ nav {
 				}
 			}
 		}
+		.scroll-down {
+			@media (min-width: 640px) {
+				bottom: 16em;
+			}
+		}
+	}
+	.scroll-down {
+		display: block;
+		position: absolute;
+		z-index: 9;
+		bottom: 4em;
+		left: 0;
+		right: 0;
+		text-align: center;
+
+		img {
+			height: 4em;
+			width: 4em;
+		}
 	}
 }
 #bumper {
