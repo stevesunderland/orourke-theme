@@ -31,6 +31,10 @@
 
                 {{ (post.content) }}
 
+                <a href="#" onclick="history.back()" class="button hollow" style="margin-top: 2em;">
+                    <i class="icon-arrow-left"></i> Go Back
+                </a>
+
                 {% if post.link %}
                     <a href="{{ post.get_field('link') }}" rel="external" class="button hollow" style="margin-top: 2em;">Visit the site <i class="icon-arrow-right"></i></a>
                 {% endif %}
