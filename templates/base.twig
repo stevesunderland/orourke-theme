@@ -41,6 +41,7 @@
                 });
               },
               grid: function() {
+                $('.item').addClass('loaded');
                 $('.intel').jscroll({
                     debug: true,
                     loadingHtml: '<div class="text-center"><button class="button hollow">Loading...</button></div>',
@@ -49,6 +50,9 @@
                     contentSelector: '.grid',
                     callback: function() {
                         $('.item').lazyLoadXT();
+                        $('.item').not('.loaded').fadeOut(0).each(function(index){
+                            $(this).delay(index*100).fadeIn(500).addClass('loaded');
+                        });
                     }
                 });
               }
