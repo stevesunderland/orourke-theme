@@ -4,6 +4,7 @@ var Site = {
     Site.menu();
     Site.lightbox();
     Site.grid();
+    Site.smoothscroll();
   },
   menu: function() {
     $(document).on('click', '.menu-toggle', function(event) {
@@ -16,6 +17,12 @@ var Site = {
       imageSelector: '.lightbox-image',
       loop: true,
       enableZoom: false
+    });
+  },
+  smoothscroll: function() {
+    $('a[href^="#"]').on('click', function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
     });
   },
   grid: function() {
