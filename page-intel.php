@@ -12,7 +12,7 @@ $context['post'] = $post;
 $args = array(
     'post_type' => 'post',
     // 'posts_per_page' => 9
-    'posts_per_page' => 15
+    'posts_per_page' => 12
 );
 
 query_posts($args);
