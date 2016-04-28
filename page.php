@@ -25,7 +25,7 @@ $parent = $post->post_parent;
 $other_pages = array(2381,6444);
 
 if ( in_array($parent, $landing_pages) || in_array($post->ID, $other_pages) ) {
-     array_unshift($templates, 'templates/page-services-single.twig');
+     array_unshift($templates, 'templates/single-services.twig');
 
 
     $related_ids = $post->related_portfolio_entries;
@@ -60,7 +60,7 @@ if ( in_array($parent, $landing_pages) || in_array($post->ID, $other_pages) ) {
 
 
 if ( $post->post_parent == 1195 ) {
-    array_unshift($templates, 'templates/page-team-single.twig');
+    array_unshift($templates, 'templates/single-team.twig');
 }
 
 
