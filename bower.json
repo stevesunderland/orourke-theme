@@ -16,7 +16,8 @@
     "foundation-sites": {
       "main": [
         "./dist/foundation.css",
-        ".dist/foundation.js"
+        "./dist/foundation.js",
+        "./dist/foundation.interchange.js"
       ]
     },
     "lazyloadxt": {

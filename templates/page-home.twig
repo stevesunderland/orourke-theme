@@ -3,7 +3,8 @@
 {% block content %}
 
 	{% for item in post.get_field('hero') %}
-		<section id="hero" data-bg="{{ post.thumbnail.src|resize(1000,600) }}" class="parallax">
+		{# <section id="hero" data-bg="{{ post.thumbnail.src|resize(1000,600) }}" class="parallax"> #}
+		<section id="hero" data-interchange="[{{ post.thumbnail.src|resize(1000,600) }}, medium]" class="parallax">
 			<div class="table">
 				<div class="cell">
 

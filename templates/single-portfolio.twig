@@ -2,7 +2,7 @@
 
 {% block content %}
     {% for post in posts %}
-        <section id="hero" data-bg="{{ post.thumbnail.src|resize(1000,600) }}" class="parallax" style="height: auto;">
+        <section id="hero" data-interchange="[{{ post.thumbnail.src|resize(1000,600) }}, large]" class="parallax show-for-large" style="height: auto;">
             <div class="overlay">
                 <div class="row">
                     <div class="column">

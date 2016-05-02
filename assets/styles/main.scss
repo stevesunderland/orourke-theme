@@ -4,20 +4,6 @@
 // bower:scss
 // endbower
 
-// @import "common/global";
-// @import "components/buttons";
-// @import "components/comments";
-// @import "components/forms";
-// @import "components/grid";
-// @import "components/wp-classes";
-// @import "layouts/header";
-// @import "layouts/sidebar";
-// @import "layouts/footer";
-// @import "layouts/pages";
-// @import "layouts/posts";
-// @import "layouts/tinymce";
-
-
 @import "icons";
 
 body {
@@ -309,13 +295,10 @@ nav {
 
 #hero {
 	margin-top: 56px;
-
 	background-color: #ddd;
 	position: relative;
-
 	height: auto;
 	min-height: 90vh;
-
 	background-size: cover;
 
 	@media (min-width: 321px) {
@@ -330,9 +313,13 @@ nav {
 		min-height: 100vh;
 		position: relative;
 		margin-top: 0;
+		background-position: right center;
 
 		@media (min-width: 321px) {
 			height: 100vh;
+		}
+		@media (max-width: 640px) {
+			background-color: $primary;
 		}
 
 
@@ -411,23 +398,6 @@ nav {
 		min-height: 90vh;
 	}
 }
-// .feature {
-
-// 	.overlay {
-// 		padding-top: 8em;
-// 		padding-bottom: 8em;
-// 	}
-
-// 	.panel {
-// 		@extend .padding;
-// 		background-color: #fff;
-
-// 		.button {
-// 			margin-top: 2em;
-// 			margin-bottom: 0;
-// 		}
-// 	}
-// }
 .grid {
 	padding: 0.05em;
 
@@ -920,22 +890,10 @@ footer {
     overflow:hidden;
 }
 
-/* fullscreen setup */
-// html, body {
-//     height:100%;
-// }
-// .fullscreen,
-// .content-a {
-// }
-// .fullscreen.overflow,
-// .fullscreen.overflow .content-a {
-//     height:auto;
-//     min-height:100%;
-// }
-
-
-
-// .menu .active>a {
-// 	background: transparent;
-// 	color: $primary;
-// }
+.single-portfolio {
+	h1 {
+		@media (max-width: 1024px) {
+			margin-top: 2em;
+		}
+	}
+}

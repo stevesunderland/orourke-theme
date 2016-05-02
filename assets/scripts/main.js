@@ -1,6 +1,8 @@
 $ = jQuery;
+
 var Site = {
   init: function() {
+    $(document).foundation();
     Site.menu();
     Site.lightbox();
     Site.grid();
@@ -137,3 +139,5 @@ if(!$("html").hasClass("touch")){
     $(window).scroll(parallaxPosition);
     parallaxPosition();
 }
+
+
