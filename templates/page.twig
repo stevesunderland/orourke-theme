@@ -8,7 +8,7 @@
         <section class="padding" id="content">
         	<div class="row">
                 <div class="column medium-10 medium-centered large-8">
-    		        {{ post.content }}
+    		        {{ post.get_content|shortcodes }}
                 </div>
         	</div>
         </section>
