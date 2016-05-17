@@ -8,11 +8,7 @@
 				978.465.5955<br>
 				<a href="mailto:hello@orourkehospitality.com">hello@orourkehospitality.com</a>
 			</address>
-			<div class="social">
-				{% for item in ['facebook','twitter','linkedin'] %}
-					<a href="#"><i class="icon-{{ item }}"></i></a>
-				{% endfor %}
-			</div>
+			{% include 'templates/partials/social.twig' %}
 		</div>
 		<div class="column medium-8 text-right">
 			{% include 'templates/partials/newsletter.twig' %}

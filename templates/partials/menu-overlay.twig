@@ -18,11 +18,7 @@
 					<a href="{{ item.get_link }}" class="{% for class in item.classes %}{{ class }} {% endfor %}">{{ item.title }}</a>
 				</h1>
 			{% endfor %}
-			<div class="social">
-				{% for item in ['facebook','twitter','linkedin'] %}
-					<a href="#"><i class="icon-{{ item }}"></i></a>
-				{% endfor %}
-			</div>
+			{% include 'templates/partials/social.twig' %}
 		</div>
 		<div class="column large-6 contact">
 			<address>
