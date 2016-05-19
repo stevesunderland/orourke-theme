@@ -40,5 +40,3 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 //   return $content;
 // }
 // add_filter( 'the_content', __NAMESPACE__ . '\\remove_shortcodes' );
-
-remove_all_shortcodes();
